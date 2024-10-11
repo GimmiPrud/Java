@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="P2024107_01_Primo/src"/>
+	<classpathentry kind="src" path="P2024107_01_Secondo/src"/>
+	<classpathentry kind="output" path="P2024107_01_Primo/bin"/>
+</classpath>
