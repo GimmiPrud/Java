@@ -1,0 +1,13 @@
+
+public class Pitagora {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		double c1 = 45.3;
+		double c2 = 67.2;
+		
+		double i = (45.3 * 2) + (67.2 * 2)
+	}
+
+}
