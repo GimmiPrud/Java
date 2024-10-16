@@ -10,9 +10,11 @@ public class Computer {
 		double Altezza = 3;
 		double Profondità = 24;
 		String Produttore = "HP";
-		int Anno_prod = 2023;	
-			
+		int Anno_prod = 2023;
+
 	}	
+
+	
 	
 }
 
