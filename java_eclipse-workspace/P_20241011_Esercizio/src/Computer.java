@@ -1,4 +1,3 @@
-
 // Creazione classi e costruttori in java (getter and setter)
 public class Computer {
 	
@@ -11,10 +10,7 @@ public class Computer {
 	private double profondita;
 	private String produttore;
 	private int annoProduzione;
-	
-	private double dimensioni = larghezza + altezza + profondita;
-	
-	
+		
 	// costruttore senza parametri 
 	public Computer() {
 	}
@@ -35,13 +31,30 @@ public class Computer {
 		n_computer ++;
 	}
 	
+	public static int comp() {
+		System.out.println("computer a disposizione:");
+		return n_computer;
+		
+	}
+	
    public static void main(String[] args) {
 	   // TODO Auto-generated method stub
 	   
 	   // creazione degli oggetti di tipo computer 
 	   Computer computer1 = new Computer(999.99, 1.4, 37.8, 23.7, 67.9, "HP", 2023);
 	   System.out.println("prezzo: "+ computer1.getPrezzo());
-	   Computer computer2 = new Computer();
+	   System.out.println("Peso: "+ computer1.getPeso());
+	   System.out.println("anno di produzione: "+ computer1.getAnnoProduzione());
+	   System.out.println("Produttore: "+ computer1.getProduttore());
+	   
+	   Computer computer2 = new Computer(856.50, 1.35, 36.5, 24, 6.5, "Asus",2022);
+	   System.out.println("prezzo: "+ computer2.getPrezzo());
+	   System.out.println("Peso: "+ computer2.getPeso());
+	   System.out.println("anno di produzione: "+ computer2.getAnnoProduzione());
+	   System.out.println("Produttore: "+ computer2.getProduttore());
+	   
+	   System.out.println(comp());
+	   
    }
    
    // getter and setter 
@@ -67,6 +80,7 @@ public class Computer {
 
    public void setLarghezza(double larghezza) {
 	   this.larghezza = larghezza;
+	  
    }
 
    public double getAltezza() {
@@ -101,10 +115,5 @@ public class Computer {
 	   this.annoProduzione = annoProduzione;
    }
 
-   public double getDimensioni() {
-	   return dimensioni;
-   }
-
    
 }
-
