@@ -2,7 +2,7 @@
 // Creazione classi e costruttori in java (getter and setter)
 public class Computer {
 	
-	int n_computer = 0;
+	static int n_computer = 0;
    
 	private double prezzo;
 	private double peso;
@@ -12,6 +12,9 @@ public class Computer {
 	private String produttore;
 	private int annoProduzione;
 	
+	private double dimensioni = larghezza + altezza + profondita;
+	
+	
 	// costruttore senza parametri 
 	public Computer() {
 	}
@@ -20,6 +23,7 @@ public class Computer {
 	public Computer(double prezzo, double peso, double larghezza, double altezza, double profondita,
 			String produttore, int annoProduzione) 
 	{	
+		
 		this.setPrezzo(prezzo);
 		this.setPeso(peso);
 		this.setLarghezza(larghezza);
@@ -28,6 +32,7 @@ public class Computer {
 		this.setProduttore(produttore);
 		this.setAnnoProduzione(annoProduzione);
 		
+		n_computer ++;
 	}
 	
    public static void main(String[] args) {
@@ -38,7 +43,7 @@ public class Computer {
 	   Computer computer2 = new Computer();
    }
    
-   //
+   // getter and setter 
    public double getPrezzo() {
 	   return prezzo;
    }
@@ -94,9 +99,11 @@ public class Computer {
    public void setAnnoProduzione(int annoProduzione) {
 	   this.annoProduzione = annoProduzione;
    }
-   
+
+   public double getDimensioni() {
+	   return dimensioni;
+   }
+
    
 }
-
-
 
