@@ -32,7 +32,7 @@ public class Computer {
 		this.setProduttore(produttore);
 		this.setAnnoProduzione(annoProduzione);
 		
-		n_computer ++;
+		n_computer ++; // il contatore che incrementa il numero di computer che vengono creati 
 	}
 	
    public static void main(String[] args) {
