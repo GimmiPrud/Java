@@ -32,14 +32,15 @@ public class Computer {
 		this.setProduttore(produttore);
 		this.setAnnoProduzione(annoProduzione);
 		
-		n_computer ++; // il contatore che incrementa il numero di computer che vengono creati (incrementa la variabile della classe)
+		n_computer ++;
 	}
 	
    public static void main(String[] args) {
 	   // TODO Auto-generated method stub
 	   
 	   // creazione degli oggetti di tipo computer 
-	   Computer computer1 = new Computer();
+	   Computer computer1 = new Computer(999.99, 1.4, 37.8, 23.7, 67.9, "HP", 2023);
+	   System.out.println("prezzo: "+ computer1.getPrezzo());
 	   Computer computer2 = new Computer();
    }
    
