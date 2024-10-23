@@ -47,11 +47,15 @@ public class Computer {
 	   System.out.println("anno di produzione: "+ computer1.getAnnoProduzione());
 	   System.out.println("Produttore: "+ computer1.getProduttore());
 	   
+	   System.out.println("---------------------------");
+	   
 	   Computer computer2 = new Computer(856.50, 1.35, 36.5, 24, 6.5, "Asus",2022);
 	   System.out.println("prezzo: "+ computer2.getPrezzo());
 	   System.out.println("Peso: "+ computer2.getPeso());
 	   System.out.println("anno di produzione: "+ computer2.getAnnoProduzione());
 	   System.out.println("Produttore: "+ computer2.getProduttore());
+	   
+	   System.out.println("---------------------------");
 	   
 	   System.out.println(comp());
 	   

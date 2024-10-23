@@ -42,7 +42,7 @@ public class Computer2 {
 
 	public void setPrezzo(double prezzo) {
 		this.prezzo = prezzo;
-	}
+;	}
 
 	public double getPeso() {
 		return peso;
@@ -95,8 +95,8 @@ public class Computer2 {
 	// toString è un metodo object che richiama tutte le variabili dell'oggetto
 	@Override
 	public String toString() {
-		return "Computer2 [prezzo=" + prezzo + ", peso=" + peso + ", larghezza=" + larghezza + ", altezza=" + altezza
-				+ ", profondita=" + profondita + ", produttore=" + produttore + ", annoProduzione=" + annoProduzione
+		return "Computer2 [prezzo= " + prezzo + ", peso= " + peso + ", larghezza= " + larghezza + ", altezza= " + altezza
+				+ ", profondita= " + profondita + ", produttore= " + produttore + ", annoProduzione= " + annoProduzione
 				+ "]";
 	}
 
