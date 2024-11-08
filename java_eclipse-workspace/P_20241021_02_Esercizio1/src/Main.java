@@ -1,4 +1,4 @@
-
+		
 public class Main {
 
 	public static void main(String[] args) {
@@ -31,7 +31,6 @@ public class Main {
 		double casuale compreso tra 0 e 1, 1 escluso,
 		stampare 10 numeri casuali, uno per riga.*/
 		
-		
 		for(int i = 0; i<10; i++) {
 			Double d;
 			d = Math.random();
@@ -40,19 +39,37 @@ public class Main {
 		}
 		System.out.println();
 		
+		/* La stessa cosa ma sulla stessa riga, separati da spazio
+		 * andando a capo solo in fondo
+		 */
+		for(int i=0; 1<10; i++) {
+			Double d = Math.random();
+			System.out.println(d);
+			System.out.println(" ");
+		}
+		System.out.println();
 		
+		
+		/* E se ...
+		 *  1) 0.23423
+		 *  2) 0.12313
+		 *  ...
+		 *  9) 0.12313
+		 * 10) 0.123344
+		 */
 		for(int i = 0; i<10; i++) {
 			Double d = Math.random();
 			System.out.println(((i<9)?" ":"") + (i+1) + ") " + d);
 			// questa espressione si chiama operatore ternario:
 			// sintassi = <espressione logica> ? <valore se True> : <valore se False>
 		}
+		
 //-------------------------------------------------//
 		
 // println() stampa il risultato e va a capo, mentre print() stampa i risultati sulla stessa riga 
 		// esiste anche printf() che si utilizza per la formattazione:
 		/*
-		 * System.out.printf è un metodo che vuolevcome parametri
+		 * System.out.printf è un metodo che vuole come parametri
 		 * 1) una stringa di formato
 		 * 2) un elenco di variabili i cui valori
 		 *    saranno inseriti nella stringa risultante
@@ -65,7 +82,7 @@ public class Main {
 		 *    Inoltre nella stringa di formato
 		 *    \n => vai a capo a nuova riga
 		 *    \r => vai a capo sulla riga corrente
-		 *    \t => inserisci un tab
+		 *    \t => inserisci un tab(spazio)
 		 *    Tutto quello che non è %<...> oppure \.
 		 *    viene riportato in stampa così com'è 
 		 */
@@ -88,6 +105,24 @@ public class Main {
 		
 		System.out.printf("Numero libero: %07d\n", 987);
 		System.out.printf("Numero libero: %07d\n", 1123987);
+		
+		//tra 0 e 2000
+		double d=Math.random()*2000;
+		
+		//tra 1000 e 2000
+		d=Math.random()*(2000-1000)+1000;
+
+		//Tra a e b
+		double a=1000;
+		double b=1987;
+		d=Math.random()*(b-a)+a;
+		
+		//e una stringa casuale?
+		String alfabeto="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+		int pos = (int)(Math.random()%alfabeto.length());
+		
+		String result="";
+		result += alfabeto.charAt(pos);
 		
 	}
 	

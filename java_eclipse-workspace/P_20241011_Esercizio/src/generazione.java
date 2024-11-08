@@ -17,7 +17,8 @@ public class generazione {
 		for(int i = 0; i<10; i++) {
 			Computer2 C = new Computer2(random.nextDouble(500,2000),random.nextDouble(2,7),
 					random.nextDouble(10,20),random.nextDouble(2,5),random.nextDouble(2,3), "Asus", random.nextInt(2000,2024));
-			System.out.println("\n"+ C);
+			System.out.print("-------------------------");
+			System.out.println("\n"+ C); 
 			
 		}
 		

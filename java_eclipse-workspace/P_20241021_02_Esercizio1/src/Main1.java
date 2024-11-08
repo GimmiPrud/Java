@@ -5,7 +5,6 @@ public class Main1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		/*
 		 * Usualmente nei linguaggi di programmazione abbiamo diversi generatori di
 		 * numeri "pseudocasuali" A volte ci sono generatori "crittografici" che cercano

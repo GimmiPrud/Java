@@ -95,9 +95,12 @@ public class Computer2 {
 	// toString è un metodo object che richiama tutte le variabili dell'oggetto
 	@Override
 	public String toString() {
-		return "Computer2 [prezzo= " + prezzo + ", peso= " + peso + ", larghezza= " + larghezza + ", altezza= " + altezza
-				+ ", profondita= " + profondita + ", produttore= " + produttore + ", annoProduzione= " + annoProduzione
-				+ "]";
+		return String.format("Prezzo: %.2f $\nPeso: %.2f g\nLarghezza: %.2f cm\nAltezza: %.2f cm\nProfondità: %.2f cm\nProduttore: %s\nanno produzione: %s",
+								prezzo, peso, larghezza, altezza, profondita, produttore, annoProduzione);
+	
 	}
+	
+	
+	
 
 }
