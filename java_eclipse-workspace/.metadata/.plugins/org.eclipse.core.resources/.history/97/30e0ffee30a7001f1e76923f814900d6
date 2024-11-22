@@ -1,0 +1,13 @@
+
+public class Motociclo extends Automezzo  {
+	
+	private Integer cilindrata;
+	
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

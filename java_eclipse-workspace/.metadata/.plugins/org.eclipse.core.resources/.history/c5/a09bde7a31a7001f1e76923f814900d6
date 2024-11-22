@@ -1,0 +1,9 @@
+
+public class Motociclo extends Automezzo  {
+	
+	private Integer cilindrata;
+	private Double consumo;
+	
+
+
+}

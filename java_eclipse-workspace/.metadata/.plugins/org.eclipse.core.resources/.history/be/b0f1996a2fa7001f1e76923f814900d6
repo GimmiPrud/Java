@@ -1,0 +1,11 @@
+
+public abstract class Automezzo {
+	
+	private Integer numero_ruote;
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

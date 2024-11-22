@@ -1,0 +1,32 @@
+
+public class Coppia <T> { //<T> definisce il tipo generic (generico)
+	
+	private T n1; // ora possiamo definire i nostri dati con il tipo dato sulla classe (<T>)
+	private T n2;
+	
+	
+	public Coppia(Integer n1, Integer n2) {
+		super();
+		this.n1 = n1;
+		this.n2 = n2;
+	}
+	
+	public Coppia() {
+		super();
+	}
+	
+	
+	public Integer getN1() {
+		return n1;
+	}
+	public void setN1(Integer n1) {
+		this.n1 = n1;
+	}
+	public Integer getN2() {
+		return n2;
+	}
+	public void setN2(Integer n2) {
+		this.n2 = n2;
+	}
+
+}

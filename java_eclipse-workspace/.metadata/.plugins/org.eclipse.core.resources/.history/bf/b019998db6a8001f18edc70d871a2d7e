@@ -1,0 +1,11 @@
+import java.util.List;
+
+public class ProductManager implements Ordinabile{
+
+	@Override
+	public List<Prodotto> sortByPrice(List<Prodotto> Prodotto) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+}

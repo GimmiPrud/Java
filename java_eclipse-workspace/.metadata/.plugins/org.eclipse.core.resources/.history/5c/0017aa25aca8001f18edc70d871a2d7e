@@ -1,0 +1,13 @@
+
+public abstract class Prodotto {
+	
+	private String name;
+	private Double price;
+	private String categoria;
+	
+	public abstract Double calculateDiscount();
+	
+	
+	
+
+}

@@ -1,0 +1,8 @@
+
+public abstract class Automezzo {
+	
+	private Integer numero_ruote;
+	private 
+
+
+}

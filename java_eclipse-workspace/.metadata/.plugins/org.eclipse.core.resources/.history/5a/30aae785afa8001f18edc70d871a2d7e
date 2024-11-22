@@ -1,0 +1,28 @@
+
+public class Abbigliamento extends Prodotto {
+
+	
+	
+	public Abbigliamento(String name, Double price, String categoria) {
+		super(name, price, categoria);
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Double calculateDiscount() {
+		if (getPrice() > 500) {
+			Double	sco = (getPrice()-getPrice())*0.10;
+			return sco;
+		}else {
+			
+			return getPrice();
+		}
+		
+	}
+
+}

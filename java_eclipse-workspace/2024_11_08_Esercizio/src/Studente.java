@@ -47,14 +47,14 @@ public class Studente extends Persona implements Comparable<Studente>{
 		
 		studenti_creati ++;
 	}
-
-
+	
 	@Override
 	public int compareTo(Studente o) {
 		return getNome().compareTo(o.getNome());
 		
 	}
-
+		
+	
 }
 
 

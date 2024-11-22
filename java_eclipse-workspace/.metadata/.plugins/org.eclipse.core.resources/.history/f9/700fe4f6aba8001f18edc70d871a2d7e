@@ -1,0 +1,12 @@
+
+public abstract class Prodotto {
+	
+	private String name;
+	private Double price;
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

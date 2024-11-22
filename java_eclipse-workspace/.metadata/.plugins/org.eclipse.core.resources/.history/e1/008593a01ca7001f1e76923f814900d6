@@ -1,0 +1,6 @@
+
+public class Coppia {
+	
+	private Integer n1;
+
+}

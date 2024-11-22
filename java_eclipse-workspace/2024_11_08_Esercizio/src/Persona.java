@@ -50,7 +50,6 @@ public class Persona extends essere_vivente{
 		// TODO Auto-generated method stub
 		
 	}
-	
 
 
 }

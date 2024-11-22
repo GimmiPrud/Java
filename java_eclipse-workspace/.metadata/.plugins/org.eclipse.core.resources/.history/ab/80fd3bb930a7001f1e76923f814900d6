@@ -1,0 +1,12 @@
+
+public class Motociclo extends Automezzo  {
+	
+	
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

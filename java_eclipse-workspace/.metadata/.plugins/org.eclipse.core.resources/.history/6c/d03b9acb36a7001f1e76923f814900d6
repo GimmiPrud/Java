@@ -1,0 +1,23 @@
+import java.util.LinkedList;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		LinkedList<Motociclo> m1 = new LinkedList<Motociclo>();
+		LinkedList<Automezzo> a1 = new LinkedList<Automezzo>();
+		
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		m1.add(new Motociclo(2, "benzina", 350, 30.5));
+		
+	}
+
+}

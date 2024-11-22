@@ -1,0 +1,11 @@
+
+public abstract class Prodotto {
+	
+	private String name;
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

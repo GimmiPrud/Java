@@ -1,0 +1,37 @@
+
+public class Motociclo extends Automezzo  {
+	
+	private Integer cilindrata;
+	private Double consumo;
+	
+	
+	
+	
+	
+	
+	
+	
+	public Motociclo(Integer cilindrata, Double consumo) {
+		super();
+		this.cilindrata = cilindrata;
+		this.consumo = consumo;
+		
+	}
+	public Integer getCilindrata() {
+		return cilindrata;
+	}
+	public void setCilindrata(Integer cilindrata) {
+		this.cilindrata = cilindrata;
+	}
+	public Double getConsumo() {
+		return consumo;
+	}
+	public void setConsumo(Double consumo) {
+		this.consumo = consumo;
+	}
+	
+	
+	
+
+
+}

@@ -1,0 +1,8 @@
+
+public class Autovettura extends Automezzo {
+	
+	private Integer cilindrata;
+	private Double consumo;
+
+	
+}

@@ -1,0 +1,59 @@
+
+public class Autovettura extends Automezzo implements Comparable<Autovettura> {
+	
+	private Integer cilindrata;
+	private Double consumo;
+	
+	
+	public Autovettura(Integer numero_ruote, String carburante, Integer cilindrata, Double consumo) {
+		super(numero_ruote, carburante);
+		this.cilindrata = cilindrata;
+		this.consumo = consumo;
+	}
+	
+	
+	public Integer getCilindrata() {
+		return cilindrata;
+	}
+	
+	public void setCilindrata(Integer cilindrata) {
+		this.cilindrata = cilindrata;
+	}
+	
+	
+	public void setConsumo(Double consumo) {
+		this.consumo = consumo;
+	}
+
+
+	@Override
+	public String toString() {
+		return "Autovettura [cilindrata=" + cilindrata + ", consumo=" + consumo + ", getNumero_ruote()="
+				+ getNumero_ruote() + ", getCarburante()=" + getCarburante() + ", toString()=" + super.toString()
+				+ ", get_max_speed()=" + get_max_speed() + "]";
+	}
+
+	@Override
+	public Integer get_max_speed() {
+		// TODO Auto-generated method stub
+		return 250;
+	}
+
+
+	@Override
+	public Double get_consumo() {
+		// TODO Auto-generated method stub
+		return consumo ;
+	}
+
+
+	@Override
+	public int compareTo(Autovettura o) {
+		return get_max_speed().compareTo(o.get_max_speed());
+	}
+	
+	
+
+		
+	
+}
