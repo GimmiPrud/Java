@@ -59,94 +59,93 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class Main {
 
+	public static void main(String[] args) {
+		new Filatrice(1).start();
+		new Filatrice(2).start();
+	}
 
- public static void main(String[] args) {
- new Filatrice(1).start();
- new Filatrice(2).start();
- }
- 
- 
-class Filatrice extends Thread {
- int id;
- public Filatrice(int id) {
- this.id=id;
- }
- public void run() {
- String nomeFile = "/tmp/filatrice_" + id + ".dat";
- String[] tessuti = {"Cotone", "Lino", "Lana", "Seta", "Poliestere", "Nylon"};
- Random rng = new Random();
- 
- //Creo l'object mapper per convertire in json al di fuori del ciclo
- ObjectMapper om = new ObjectMapper();
+	class Filatrice extends Thread {
+		int id;
 
+		public Filatrice(int id) {
+			this.id = id;
+		}
 
- while (true) {
- try {
- Thread.sleep(10000);
- } catch (InterruptedException e) {
- // TODO Auto-generated catch block
- e.printStackTrace();
- }
- //Genera tessuto e quantità
- String tessuto = tessuti[rng.nextInt(0, tessuti.length)];
- int metri = rng.nextInt(20, 60);
- 
- //Per comodità utilizzo una classe produzione che contiene tessuto e metraggio
- Produzione prodotto = new Produzione(tessuto, metri);
- 
- //Ora converto in stringa JSON
- String js;
- try {
- js = om.writeValueAsString(prodotto);
- } catch (JsonProcessingException e) {
- // TODO Auto-generated catch block
- e.printStackTrace();
- continue; //Riparto con il loop!! non posso scrivere
- }
- 
- //Ora salvo su file
- var toAppend = Util.OpenFileForAppend(nomeFile);
- try {
- toAppend.write(js);
- } catch (IOException e) {
- // TODO Auto-generated catch block
- e.printStackTrace();
- continue; //Riparto con il loop, non sono riuscito a aprire il file
- }
- try {
- toAppend.close();
- } catch (IOException e) {
- // TODO Auto-generated catch block
- e.printStackTrace();
- }
- }
- }
-}
+		public void run() {
+			String nomeFile = "/tmp/filatrice_" + id + ".dat";
+			String[] tessuti = { "Cotone", "Lino", "Lana", "Seta", "Poliestere", "Nylon" };
+			Random rng = new Random();
 
+			// Creo l'object mapper per convertire in json al di fuori del ciclo
+			ObjectMapper om = new ObjectMapper();
 
-class Produzione{
- public String prodotto;
- public int metraggio;
- public Produzione(String prodotto, int metraggio) {
- super();
- this.prodotto = prodotto;
- this.metraggio = metraggio;
- }
- public Produzione() {
- super();
- }
-}
+			while (true) {
+				try {
+					Thread.sleep(10000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				// Genera tessuto e quantità
+				String tessuto = tessuti[rng.nextInt(0, tessuti.length)];
+				int metri = rng.nextInt(20, 60);
 
-public static BufferedWriter OpenFileForAppend(String nomeFile) {
-    try {
-        Path path = Path.of(nomeFile);
-        BufferedWriter writer = Files.newBufferedWriter(
-                path,
-                Files.exists(path)?StandardOpenOption.APPEND:StandardOpenOption.CREATE);
-        return writer;
-    } catch (Exception ex) {
-        return null;
-    }
-}
+				// Per comodità utilizzo una classe produzione che contiene tessuto e metraggio
+				Produzione prodotto = new Produzione(tessuto, metri);
+
+				// Ora converto in stringa JSON
+				String js;
+				try {
+					js = om.writeValueAsString(prodotto);
+				} catch (JsonProcessingException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					continue; // Riparto con il loop!! non posso scrivere
+				}
+
+				// Ora salvo su file
+				var toAppend = Util.OpenFileForAppend(nomeFile);
+				try {
+					toAppend.write(js);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+					continue; // Riparto con il loop, non sono riuscito a aprire il file
+				}
+				try {
+					toAppend.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+	}
+
+	class Produzione {
+		public String prodotto;
+		public int metraggio;
+
+		public Produzione(String prodotto, int metraggio) {
+			super();
+			this.prodotto = prodotto;
+			this.metraggio = metraggio;
+		}
+
+		public Produzione() {
+			super();
+		}
+	}
+
+	public static BufferedWriter OpenFileForAppend(String nomeFile) {
+		try {
+			Path path = Path.of(nomeFile);
+			BufferedWriter writer = Files.newBufferedWriter(path,
+					Files.exists(path) ? StandardOpenOption.APPEND : StandardOpenOption.CREATE);
+			return writer;
+		} catch (Exception ex) {
+			return null;
+		}
+	}
 }
 
