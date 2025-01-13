@@ -1,5 +1,5 @@
 
-public class Thread_4 extends Thread {
+public class Thread_4_1 extends Thread{
 	
 	public void run() {
 		try {
@@ -12,11 +12,4 @@ public class Thread_4 extends Thread {
 			e.getStackTrace();
 		}
 	}
-
 }
-
-
-
-
-
-
