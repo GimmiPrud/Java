@@ -19,6 +19,7 @@ public class DAOUtenteMappa {
 	return true;
 
 	}
+	
 	public List<Utente> selectAll(){
 	return new ArrayList<>(mappa.values());
 	}
