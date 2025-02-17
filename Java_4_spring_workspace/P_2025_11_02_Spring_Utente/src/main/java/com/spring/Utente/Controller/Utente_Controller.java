@@ -44,16 +44,8 @@ import com.spring.Utente.entity.Utente; // importiamo la classe utente
 
 	// creare una lista che si aggiorna per ogni utente registrato e lo manda a schermo
 	@GetMapping(path = "/mostraTutti", produces = MediaType.APPLICATION_JSON_VALUE) 
-	public ArrayList<UtenteDTO> mostraTutti(){
-		
-		ArrayList<UtenteDTO> listaDto = new ArrayList<UtenteDTO>();
-		ArrayList<Utente> lista = new ArrayList<Utente>(dao.selectAll());
-		
-		for (Utente utente:lista) {
-			UtenteDTO udto = Conversioni.daUtenteAdAUtenteDto(utente);
-			listaDto.add(udto);
-		}
-		return listaDto;
+	public List<UtenteDTO> mostraTutti(){
+		return service.mostraTutti();
 		
 	}
 	
