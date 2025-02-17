@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.Utente.Dto.NomeCognomeDTO;
 import com.spring.Utente.Dto.UtenteDTO;
 import com.spring.Utente.Service.Utente_Service;
 import com.spring.Utente.Utility.Conversioni;
@@ -17,7 +18,7 @@ import com.spring.Utente.dao.DAOUtenteMappa;
 import com.spring.Utente.entity.Utente; // importiamo la classe utente
 	
 	@RestController
-	@RequestMapping(path= "utenti")
+	@RequestMapping(path= "/utenti")
 	public class Utente_Controller {
 		
 		private Utente_Service service = new Utente_Service();
@@ -55,5 +56,20 @@ import com.spring.Utente.entity.Utente; // importiamo la classe utente
 		return listaDto;
 		
 	}
+	
+	@GetMapping(path="/modificaPassword/{idUtente}", produces = "application/json")
+	public UtenteDTO modificaMail(@PathVariable int idUtente, String password) {
+		return service.updatePassword(idUtente, password);
+	}
+	
+	@GetMapping(path="/cancella/{idUtente}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public UtenteDTO cancellaUtente(@PathVariable int idUtente) {
+		return service.cancella(idUtente);
+	}
 
+	@GetMapping(path="/nomeCognome/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public NomeCognomeDTO getNomeCognome(@PathVariable int id) {
+		return service.getNomeCognome(id);
+	}
+	
 }

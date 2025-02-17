@@ -3,6 +3,7 @@ package com.spring.Utente.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.spring.Utente.Dto.NomeCognomeDTO;
 import com.spring.Utente.Dto.UtenteDTO;
 import com.spring.Utente.Utility.Conversioni;
 import com.spring.Utente.dao.DAOUtenteMappa;
@@ -34,5 +35,40 @@ public class Utente_Service {
 		return null;
 		
 	}
+	
+	public NomeCognomeDTO getNomeCognome(int id) {
+		Utente utente = dao.selectById(id);
+		if(utente != null) {
+			return new NomeCognomeDTO(utente.getNome(), utente.getCognome());
+		}
+		return null;
+	}
+
+	public List<UtenteDTO> mostraTutti() {
+		List<Utente> lista = dao.selectAll();
+		List<UtenteDTO> listaDto = new ArrayList<>();
+		for (Utente utente : lista) {
+			listaDto.add(Conversioni.daUtenteAdAUtenteDto(utente));
+		}
+		return listaDto;
+	}
+
+	public UtenteDTO updatePassword(int idUtente, String password) {
+		Utente utente = dao.selectById(idUtente);
+		if(utente != null) {
+			utente.setPassword(password);
+			return Conversioni.daUtenteAdAUtenteDto(utente);
+		}
+		return null;
+	}
+	public UtenteDTO cancella(int idUtente) {
+		Utente utente = dao.selectById(idUtente);
+		if(utente != null) {
+			dao.delete(idUtente);
+			return Conversioni.daUtenteAdAUtenteDto(utente);
+		}
+		return null;
+	}
+	
 	
 }
