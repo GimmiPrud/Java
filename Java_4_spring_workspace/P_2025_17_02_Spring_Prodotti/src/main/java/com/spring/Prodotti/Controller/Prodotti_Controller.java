@@ -82,7 +82,4 @@ public class Prodotti_Controller {
 		return service.media_pezzi();
 	}
 	
-	
-	
-
 }
