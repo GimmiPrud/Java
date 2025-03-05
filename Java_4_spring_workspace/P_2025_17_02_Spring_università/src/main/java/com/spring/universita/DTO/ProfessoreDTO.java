@@ -15,7 +15,7 @@ public class ProfessoreDTO {
 	
 	public ProfessoreDTO(int iD, String nome, String cognome, String materia_insegnamento) {
 		super();
-		ID = iD;
+		this.ID = iD;
 		this.nome = nome;
 		this.cognome = cognome;
 		this.materia_insegnamento = materia_insegnamento;
