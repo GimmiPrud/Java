@@ -1,5 +1,8 @@
 package com.example.Rubrica.spring.Utility;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.example.Rubrica.spring.Entity.ContattoTelefonico;
 import com.example.Rubrica.spring.Entity.Rubrica;
 import com.example.Rubrica.spring.dto.ContattoTelefonicoDto;
@@ -8,11 +11,24 @@ import com.example.Rubrica.spring.dto.RubricaDto;
 public class Conversioni {
 	
 	public static Rubrica daRubricaDtoARubrica(RubricaDto dto) {
-		return new Rubrica(dto.getId(), dto.getNome_proprietario(), dto.getAnno_creazione());    
+		
+		Map<Integer, ContattoTelefonico> contattiTelefonici = new HashMap<Integer, ContattoTelefonico>();
+		
+		for (ContattoTelefonicoDto contattoTelefonicoDTO : dto.getLista_contatti().values()) {
+			
+			contattiTelefonici.put(contattoTelefonicoDTO.getId(), daContattoDtoAContatto(contattoTelefonicoDTO));
+		}
+		return new Rubrica(dto.getId(), dto.getNome_proprietario(), dto.getAnno_creazione(), contattiTelefonici);    
 	}
 	
 	public static RubricaDto daRubricaARubricaDto(Rubrica rub) {
-		return new RubricaDto(rub.getId(), rub.getNome_proprietario(), rub.getAnno_creazione());
+		Map<Integer, ContattoTelefonicoDto> contattiTelefonici = new HashMap<Integer, ContattoTelefonicoDto>();
+		
+		for (ContattoTelefonico contattoTelefonico : rub.getLista_contatti().values()) {
+			
+			contattiTelefonici.put(contattoTelefonico.getId(), daContattoAContattoDto(contattoTelefonico));
+		}
+		return new RubricaDto(rub.getId(), rub.getNome_proprietario(), rub.getAnno_creazione(), contattiTelefonici);
 	}
 	
 	public static ContattoTelefonico daContattoDtoAContatto(ContattoTelefonicoDto dto) {

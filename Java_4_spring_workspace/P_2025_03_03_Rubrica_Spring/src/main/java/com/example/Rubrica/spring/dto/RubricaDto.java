@@ -1,6 +1,8 @@
 package com.example.Rubrica.spring.dto;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.example.Rubrica.spring.Entity.ContattoTelefonico;
 
@@ -9,7 +11,7 @@ public class RubricaDto {
 	private int id;
 	private String nome_proprietario;
 	private int anno_creazione;
-	private List<ContattoTelefonico> lista_contatti;
+	private Map<Integer, ContattoTelefonicoDto> lista_contatti = new HashMap<Integer, ContattoTelefonicoDto>();
 	
 	
 	public RubricaDto( int id, String nome_proprietario, int anno_creazione) {
@@ -20,6 +22,18 @@ public class RubricaDto {
 	}
 	
 	
+
+	public RubricaDto(int id, String nome_proprietario, int anno_creazione,
+			Map<Integer, ContattoTelefonicoDto> lista_contatti) {
+		super();
+		this.id = id;
+		this.nome_proprietario = nome_proprietario;
+		this.anno_creazione = anno_creazione;
+		this.lista_contatti = lista_contatti;
+	}
+
+
+
 	public RubricaDto() {
 		super();
 	}
@@ -43,10 +57,10 @@ public class RubricaDto {
 	public void setAnno_creazione(int anno_creazione) {
 		this.anno_creazione = anno_creazione;
 	}
-	public List<ContattoTelefonico> getLista_contatti() {
+	public Map<Integer,ContattoTelefonicoDto> getLista_contatti() {
 		return lista_contatti;
 	}
-	public void setLista_contatti(List<ContattoTelefonico> lista_contatti) {
+	public void setLista_contatti(Map<Integer, ContattoTelefonicoDto> lista_contatti) {
 		this.lista_contatti = lista_contatti;
 	}
 
