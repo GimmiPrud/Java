@@ -5,15 +5,15 @@ public class StudenteDto {
 	private Integer matricola;  // primary key 
 	private String nome;
 	private String cognome;
-	private Integer annoImmatricolazione;
+	private Integer anno_immatricolazione;
 	
 
-	public StudenteDto(Integer matricola, String nome, String cognome, Integer annoImmatricolazione) {
+	public StudenteDto(Integer matricola, String nome, String cognome, Integer anno_immatricolazione) {
 		super();
 		this.matricola = matricola;
 		this.nome = nome;
 		this.cognome = cognome;
-		this.annoImmatricolazione = annoImmatricolazione;
+		this.anno_immatricolazione = anno_immatricolazione;
 	}
 	
 	
@@ -41,11 +41,11 @@ public class StudenteDto {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public Integer getAnnoImmatricolazione() {
-		return annoImmatricolazione;
+	public Integer getAnno_immatricolazione() {
+		return anno_immatricolazione;
 	}
-	public void setAnnoImmatricolazione(Integer annoImmatricolazione) {
-		this.annoImmatricolazione = annoImmatricolazione;
+	public void setAnno_immatricolazione(Integer anno_immatricolazione) {
+		this.anno_immatricolazione = anno_immatricolazione;
 	}
 	
 	

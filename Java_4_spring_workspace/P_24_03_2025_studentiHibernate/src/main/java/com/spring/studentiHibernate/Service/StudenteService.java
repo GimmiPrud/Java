@@ -9,5 +9,9 @@ public interface StudenteService {
 	
 	public boolean immatricola(StudenteDto studente);
 	public StudenteDto cerca(Integer matricola);
+	public List<StudenteDto> getGiovani(Integer anno_immatricolazione);
+	public String elimina(Integer matricola);
+	public List<StudenteDto> visualizzaTutti();
+	
 	
 }

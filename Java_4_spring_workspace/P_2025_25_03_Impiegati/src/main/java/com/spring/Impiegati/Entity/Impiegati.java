@@ -1,30 +1,29 @@
-package com.spring.studentiHibernate.Entity;
+package com.spring.Impiegati.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
-@Entity 
-public class Studenti {
+@Entity
+public class Impiegati {
 	
 	@Id
-	private Integer matricola;  // primary key 
+	private Integer matricola;
 	private String nome;
 	private String cognome;
-	private Integer anno_immatricolazione;
+	private Double salarioMensile;
 	
-		
-	public Studenti(Integer matricola, String nome, String cognome, Integer anno_immatricolazione) {
+	
+	public Impiegati(Integer matricola, String nome, String cognome, Double salarioMensile) {
 		super();
 		this.matricola = matricola;
 		this.nome = nome;
 		this.cognome = cognome;
-		this.anno_immatricolazione = anno_immatricolazione;
+		this.salarioMensile = salarioMensile;
 	}
 	
 	
-	public Studenti() {
-		super();
-		// TODO Auto-generated constructor stub
+	public Impiegati() {
+		super();	
 	}
 
 
@@ -46,11 +45,11 @@ public class Studenti {
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
 	}
-	public Integer getAnno_immatricolazione() {
-		return anno_immatricolazione;
+	public Double getSalarioMensile() {
+		return salarioMensile;
 	}
-	public void setAnno_immatricolazione(Integer anno_immatricolazione) {
-		this.anno_immatricolazione = anno_immatricolazione;
+	public void setSalarioMensile(Double salarioMensile) {
+		this.salarioMensile = salarioMensile;
 	}
 	
 	
